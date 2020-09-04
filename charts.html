@@ -1,0 +1,97 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<!-- Column Graph -->
+<script>
+
+var chart = null;
+var dataPoints = [];
+
+window.onload = function() {
+
+chart = new CanvasJS.Chart("chartContainer", {
+	animationEnabled: true,
+	theme: "light2",
+	title: {
+		text: "Daily Sales Data"
+	},
+	axisY: {
+		title: "Units",
+		titleFontSize: 24
+	},
+	data: [{
+		type: "column",
+		yValueFormatString: "#,### Units",
+		dataPoints: dataPoints
+	}]
+});
+
+
+// $.getJSON("https://canvasjs.com/data/gallery/javascript/daily-sales.json?callback=?", callback);	
+
+
+}
+
+function callback(data) {	
+	for (var i = 0; i < data.dps.length; i++) {
+		dataPoints.push({
+			x: new Date(data.dps[i].date),
+			y: data.dps[i].units
+		});
+	}
+	chart.render(); 
+}
+</script>
+</head>
+<body>
+<div id="chartContainer" style="height: 370px; max-width: 920px; margin: 0px auto;"></div>
+<script src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
+<script src="../../canvasjs.min.js"></script>
+<?php include 'DataParse.php';
+?>
+</body>
+
+<!-- Pie Chart -->
+<head>
+    <meta charset="UTF-8">
+    <script>
+    window.onload = function() {
+    
+    var chart = new CanvasJS.Chart("chartContainer", {
+        theme: "light2", // "light1", "light2", "dark1", "dark2"
+        exportEnabled: true,
+        animationEnabled: true,
+        title: {
+            text: "Desktop Browser Market Share in 2016"
+        },
+        data: [{
+            type: "pie",
+            startAngle: 25,
+            toolTipContent: "<b>{label}</b>: {y}%",
+            showInLegend: "true",
+            legendText: "{label}",
+            indexLabelFontSize: 16,
+            indexLabel: "{label} - {y}%",
+            dataPoints: [
+                { y: 51.08, label: "Chrome" },
+                { y: 27.34, label: "Internet Explorer" },
+                { y: 10.62, label: "Firefox" },
+                { y: 5.02, label: "Microsoft Edge" },
+                { y: 4.07, label: "Safari" },
+                { y: 1.22, label: "Opera" },
+                { y: 0.44, label: "Others" }
+            ]
+        }]
+    });
+    chart.render();
+    
+    }
+    </script>
+    </head>
+    <body>
+    <div id="chartContainer" style="height: 370px; max-width: 920px; margin: 0px auto;"></div>
+    <script src="../../canvasjs.min.js"></script>
+    </body>
+</html>
