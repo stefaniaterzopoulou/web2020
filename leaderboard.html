@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>LeaderBoard</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+  <script src = "leaderboard.js" defer></script>
+  
+    <!-- ########### CSS ###########-->
+    <style>
+      body{
+        background-color: lemonchiffon;
+        margin:0;
+        }
+        h1 {
+            text-align: center;
+            color: lightsalmon;
+        }
+        p{
+            text-align: center;
+            color: burlywood;
+        }
+        ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-image: url("index.jpg");
+        position: fixed;
+        top: 0;
+        width: 100%;
+      }
+  
+      li {
+        float: left;
+      }
+  
+      li a {
+        display: block;
+        color: coral ;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+      }
+  
+      li a:hover:not(.active) {
+        background-color: lemonchiffon ;
+      }
+  
+      .active {
+        background-color: sandybrown ;
+      }
+    </style>
+  </head>
+  
+  
+  <body>
+  
+  <ul>
+    <li><a class="active" href="http://localhost//WEB//leaderboard.html">Leaderboard</a>
+    <li><a href="http://localhost//WEB//Mapp.html">Map</a>
+    <li><a href="http://localhost//WEB//MainUser.php" id="as">Logs</a>
+    <li><a href="logoff.php">Logout</a></li>
+  </ul>
+
+  <div style="padding:20px;margin-top:30px;background-color:lemonchiffon;height:1500px;">
+    <h1>LeaderBoard</h1>
+    <p>Here Are Our Top Users</p>
+  </div>
+<div id="Dates">
+  
+</div>
+<button id ="Getbrick">Press</button>
+<canvas id = "chart" width="100" height="100"></canvas>
+
+</body>
+</html>

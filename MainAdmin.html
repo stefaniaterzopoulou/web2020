@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Admin</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"/>
+      <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/heatmapjs@2.0.2/heatmap.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/leaflet-heatmap@1.0.0/leaflet-heatmap.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  <script src="mainAdmin.js" defer></script>
+  
+  
+  <style>
+    body{
+      background-color: lemonchiffon;
+      margin:0;
+      }
+      h1 {
+          text-align: center;
+          color: lightsalmon;
+      }
+      p{
+          text-align: center;
+          color: burlywood;
+      }
+      ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-image: url("index.jpg");
+      position: fixed;
+      top: 0;
+      width: 100%;
+    }
+
+    li {
+      float: left;
+    }
+
+    li a {
+      display: block;
+      color: coral ;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+
+    li a:hover:not(.active) {
+      background-color: lemonchiffon ;
+    }
+
+    .active {
+      background-color: sandybrown ;
+    }
+    table#t01 tr:nth-child(even){
+      background-color: antiquewhite;
+    }
+    table#t01 tr:nth-child(odd){
+      background-color: beige;
+    }
+    table#t01 th {
+      background-color: burlywood;
+      text-align: center;
+    }
+    table#t01 th,td{
+      text-align: center;
+    }
+    table#t01 td{
+      vertical-align: middle;
+    }
+  </style>
+</head>
+
+
+<body>
+
+<ul>
+  <li><a class="active" href="http://localhost//WEB//MainUser.php" id="as">Logs</a>
+  <li><a href="http://localhost//WEB//Mapp.html">Map</a>
+  <li><a href="http://localhost//WEB//leaderboard.html">Leaderboard</a>
+  <li><a href="logoff.php">Logout</a></li>
+</ul>
+
+<div style="padding:20px;margin-top:30px;background-color:lemonchiffon;height:1500px;">
+  <h1>Welcome Admin</h1>
+  <p>Here, you can see all the information about the users.</p>
+
+
+<!-- ########### Table ########### -->
+<div class="table-responsive-sm">
+  <table id="t01" class="table table-bordered">
+    <thread>
+      <!-- Headers -->
+      <tr>
+        <th>User</th>
+        <th>Entries/Activity</th>
+        <th>Entries/User</th>
+        <th>Entries/Month</th>
+        <th>Entries/Day</th>
+        <th>Entries/Hour</th>
+        <th>Entries/Year</th>
+      </tr>
+    </thread>
+  </table>
+  <tbody>
+    <!-- Lines -->
+    <tr>
+      <td></td>
+    </tr>
+  </tbody>
+</div>
+<div id="mapid">
+  
+</div>
+<button id ="Getbrick">Press</button>
+<div id="users">
+  
+</div>
+
+</body>
+</html>
+
+
+
